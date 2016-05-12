@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201605120858140_Init.Designer.cs">
       <DependentUpon>201605120858140_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605121423427_validation changes.cs" />
+    <Compile Include="Migrations\201605121423427_validation changes.Designer.cs">
+      <DependentUpon>201605121423427_validation changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,6 +149,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images2\Parkering-underjord.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -197,6 +202,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605120858140_Init.resx">
       <DependentUpon>201605120858140_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605121423427_validation changes.resx">
+      <DependentUpon>201605121423427_validation changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
