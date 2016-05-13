@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestView.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccessLayer\VehiclesContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -187,6 +188,8 @@
     <Content Include="Views\Vehicles\Details.cshtml" />
     <Content Include="Views\Vehicles\Edit.cshtml" />
     <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\TestView\TestView.cshtml" />
+    <Content Include="Views\TestView\TestCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
