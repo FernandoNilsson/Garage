@@ -21,6 +21,16 @@ namespace GarageMVC.Controllers
             return View(db.Vehicles.ToList());
         }
 
+        //
+        public ActionResult Overview()
+        {
+
+            return View(db.Vehicles.ToList());
+
+
+        }
+
+
         // GET: Vehicles/Details/5
         public ActionResult Details(int? id)
         {
@@ -40,6 +50,7 @@ namespace GarageMVC.Controllers
         public ActionResult Create()
         {
             return View();
+            
         }
 
         // POST: Vehicles/Create
@@ -52,8 +63,9 @@ namespace GarageMVC.Controllers
             if (ModelState.IsValid)
             {
                 db.Vehicles.Add(vehicle);
+                vehicle.CheckInTime = DateTime.Now;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Overview");
             }
 
             return View(vehicle);

@@ -24,7 +24,7 @@ namespace GarageMVC.Migrations
               p => p.VehicleType,
               new Vehicle
               {
-                  VehicleType = "Personbil",
+                  VehicleType = VehicleTypes.Car,
                   RegNr = "ABC 123",
                   Color = "Blue",
                   Brand = "Volvo",
@@ -33,7 +33,7 @@ namespace GarageMVC.Migrations
               },
               new Vehicle
               {
-                  VehicleType = "Motorcyckel",
+                  VehicleType = VehicleTypes.Motorcycle,
                   RegNr = "YUI 567",
                   Color = "Green",
                   Brand = "BMW",
@@ -43,7 +43,7 @@ namespace GarageMVC.Migrations
 
               new Vehicle
               {
-                  VehicleType = "Lastbil",
+                  VehicleType = VehicleTypes.Truck,
                   RegNr = "ERT 987",
                   Color = "Black",
                   Brand = "Scania",

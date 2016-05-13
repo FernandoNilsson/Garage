@@ -15,13 +15,21 @@
         <h4>Vehicle</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+       @* <div class="form-group">
             @Html.LabelFor(model => model.VehicleType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.VehicleType, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.VehicleType, "", new { @class = "text-danger" })
+            </div> *@
+            <div class="form-group">
+                @Html.LabelFor(model => model.VehicleType, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                   @* @Html.EditorFor(model => model.VehicleType) *@
+                    @Html.EnumDropDownListFor(model => model.VehicleType)
+                    @Html.ValidationMessageFor(model => model.VehicleType)
+                </div>
+
             </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.RegNr, htmlAttributes: new { @class = "control-label col-md-2" })

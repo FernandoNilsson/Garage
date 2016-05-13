@@ -6,10 +6,17 @@ using System.Web;
 
 namespace GarageMVC.Models
 {
+
+    public enum VehicleTypes {Car,Motorcycle,Truck }
+
+
+
     public class Vehicle
     {
         public int Id { get; set; }
-        public string VehicleType { get; set; }
+        public VehicleTypes VehicleType { get; set; }
+
+        public DateTime CheckInTime { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -26,5 +33,9 @@ namespace GarageMVC.Models
         [Required]
         [Range(2,10)]
         public int NrWheels { get; set; }
+
+
+       
+
     }
 }
