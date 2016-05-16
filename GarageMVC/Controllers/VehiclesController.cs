@@ -22,15 +22,11 @@ namespace GarageMVC.Controllers
         }
 
         //
-        public ActionResult Overview(string searchTerm = null)
+        public ActionResult Overview()
         {
-            var model =
-            from v in db.Vehicles
-            orderby v.RegNr ascending
-            where searchTerm == v.RegNr 
-            select v;
+            
 
-            return View(model);
+            return View(db.Vehicles.ToList());
         }
 
         public ActionResult Search(string searchTerm = "")
