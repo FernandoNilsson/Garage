@@ -14,7 +14,7 @@ namespace GarageMVC.Controllers
     public class VehiclesController : Controller
     {
         private VehiclesContext db = new VehiclesContext();
-
+        
         // GET: Vehicles
         public ActionResult Index()
         {
@@ -30,6 +30,22 @@ namespace GarageMVC.Controllers
 
         }
 
+        public ActionResult Search(string searchTerm = "")
+        {
+            var searchobj = db.Vehicles
+                            .OrderBy(r => r.RegNr)
+                            .Where( r => r.RegNr == searchTerm );
+                 
+            
+
+
+
+
+            return View(searchobj);
+            
+
+
+        }
 
         // GET: Vehicles/Details/5
         public ActionResult Details(int? id)
@@ -136,5 +152,8 @@ namespace GarageMVC.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
     }
 }
