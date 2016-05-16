@@ -22,12 +22,15 @@ namespace GarageMVC.Controllers
         }
 
         //
-        public ActionResult Overview()
+        public ActionResult Overview(string searchTerm = null)
         {
+            var model =
+            from v in db.Vehicles
+            orderby v.RegNr ascending
+            where searchTerm == v.RegNr 
+            select v;
 
-            return View(db.Vehicles.ToList());
-
-
+            return View(model);
         }
 
         public ActionResult Search(string searchTerm = "")
@@ -66,7 +69,7 @@ namespace GarageMVC.Controllers
         public ActionResult Create()
         {
             return View();
-            
+
         }
 
         // POST: Vehicles/Create
