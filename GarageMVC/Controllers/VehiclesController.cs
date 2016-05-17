@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using GarageMVC.DataAccessLayer;
 using GarageMVC.Models;
+using System.Diagnostics;
 
 namespace GarageMVC.Controllers
 {
@@ -144,6 +145,9 @@ namespace GarageMVC.Controllers
         }
 
         // GET: Vehicles/Delete/5
+        //kollar om id är null
+        // kollar om vehicle är null
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -158,15 +162,59 @@ namespace GarageMVC.Controllers
             return View(vehicle);
         }
 
+
+        public ActionResult Receipt(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle == null)
+            {
+                return HttpNotFound();
+            }
+
+            else
+            {
+
+                int price;
+                price = 60;
+                TimeSpan totalParkingTime;
+                DateTime CheckOutTime = DateTime.Now;
+                totalParkingTime = CheckOutTime.Subtract(vehicle.CheckInTime);
+                int totalParkHours = totalParkingTime.Hours;
+                int totalParkMinutes = totalParkingTime.Minutes;
+                int totalPrice = totalParkHours * price + totalParkMinutes ;
+                Debug.WriteLine(totalPrice);
+                Console.WriteLine(totalPrice);
+                ViewBag.CheckOutTime = CheckOutTime;
+                ViewBag.totalPrice = totalPrice;
+                ViewBag.totalParkHours = totalParkHours;
+                ViewBag.totalParkMinutes = totalParkMinutes;
+
+
+
+
+
+                return View(vehicle);
+            }
+        }
+
         // POST: Vehicles/Delete/5
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
-            db.Vehicles.Remove(vehicle);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+      
+            
+            db.Vehicles.Remove(vehicle);      
+            db.SaveChanges();                  
+           
+        return RedirectToAction("Overview");
         }
 
         protected override void Dispose(bool disposing)
@@ -177,6 +225,11 @@ namespace GarageMVC.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
 
 
 

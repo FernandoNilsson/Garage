@@ -35,7 +35,14 @@ namespace GarageMVC.Models
         public int NrWheels { get; set; }
 
 
-       
+        public void Receipt(Vehicle vehicle)
+        {
+
+            Console.WriteLine("hej");
+
+
+
+        }
 
     }
 }
