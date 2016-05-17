@@ -30,7 +30,7 @@ namespace GarageMVC.Migrations
                   Brand = "Volvo",
                   Model = "V70",
                   NrWheels = 4,
-                  CheckInTime = DateTime.Now
+                  CheckInTime = new DateTime(2016, 04, 15, 12, 03, 05)
               },
               new Vehicle
               {
@@ -51,7 +51,7 @@ namespace GarageMVC.Migrations
                   Brand = "Scania",
                   Model = "R620",
                   NrWheels = 6,
-                  CheckInTime = new DateTime(2016, 05, 12, 15, 03, 05)
+                  CheckInTime = new DateTime(2016, 05, 12, 15, 03, 05),
               }
 
 
