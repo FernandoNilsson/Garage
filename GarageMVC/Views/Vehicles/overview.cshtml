@@ -13,7 +13,7 @@
 
 
 <table class="table">
-    <tr>
+    @*<tr>
         <th>
             @Html.DisplayNameFor(model => model.VehicleType)
         </th>
@@ -27,6 +27,21 @@
             @Html.DisplayNameFor(model => model.Color)
         </th>
       
+        <th></th>
+    </tr>*@
+    <tr>
+        <th>
+            @Html.ActionLink("VehicleType", "Overview", new { sortOrder = "VehicleType" })
+        </th>
+        <th>
+            @Html.ActionLink("CheckInTime", "Overview", new { sortOrder = "CheckInTime" })
+        </th>
+        <th>
+            @Html.ActionLink("RegNr", "Overview", new { sortOrder = "RegNr" })
+        </th>
+        <th>
+            @Html.ActionLink("Color", "Overview", new { sortOrder = "Color" })
+        </th>
         <th></th>
     </tr>
 

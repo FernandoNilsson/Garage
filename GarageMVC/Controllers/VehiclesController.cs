@@ -22,11 +22,37 @@ namespace GarageMVC.Controllers
         }
 
         //
-        public ActionResult Overview()
+        public ActionResult Overview(string sortOrder)
         {
-            
+            ViewBag.VehicleSortParm = String.IsNullOrEmpty(sortOrder) ? "VehicleType" : "";
+            ViewBag.CheckInTimeSortParm = sortOrder == "CheckInTime" ? "CheckinTime" : "";
+            ViewBag.RegNrSortParm = sortOrder == "RegNr" ? "RegNr" : "";
+            var vehicles= from v in db.Vehicles
+                           select v;
+            switch (sortOrder)
+            {
+                case "VehicleType":
+                    vehicles= vehicles.OrderBy(v => v.VehicleType);
+                    break;
+                case "CheckInTime":
+                    vehicles= vehicles.OrderBy(v => v.CheckInTime);
+                    break;
+                case "RegNr":
+                    vehicles= vehicles.OrderBy(v => v.RegNr);
+                    break;
+                case "Color":
+                    vehicles = vehicles.OrderBy(v => v.Color);
+                    break;
 
-            return View(db.Vehicles.ToList());
+                default:
+                    vehicles= vehicles.OrderBy(v => v.VehicleType);
+                    break;
+            }
+
+
+
+
+            return View(vehicles);
         }
 
         public ActionResult Search(string searchTerm = "")
