@@ -150,6 +150,14 @@
     <Compile Include="Migrations\201605131139298_timestamp.Designer.cs">
       <DependentUpon>201605131139298_timestamp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605170937459_checkouttime.cs" />
+    <Compile Include="Migrations\201605170937459_checkouttime.Designer.cs">
+      <DependentUpon>201605170937459_checkouttime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605170950014_revert.cs" />
+    <Compile Include="Migrations\201605170950014_revert.Designer.cs">
+      <DependentUpon>201605170950014_revert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +205,7 @@
     <Content Include="Views\Vehicles\Index.cshtml" />
     <Content Include="Views\Vehicles\Overview.cshtml" />
     <Content Include="Views\Vehicles\Search.cshtml" />
+    <Content Include="Views\Vehicles\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -221,6 +230,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605131139298_timestamp.resx">
       <DependentUpon>201605131139298_timestamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605170937459_checkouttime.resx">
+      <DependentUpon>201605170937459_checkouttime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605170950014_revert.resx">
+      <DependentUpon>201605170950014_revert.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
