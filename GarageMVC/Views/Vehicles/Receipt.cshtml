@@ -25,6 +25,12 @@
         <dd>
             @Html.DisplayFor(model => model.CheckInTime)
         </dd>
+        <dt>
+            CheckOutTime
+        </dt>
+        <dd>
+            @ViewBag.CheckOutTime
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.RegNr)
@@ -66,9 +72,33 @@
             @Html.DisplayFor(model => model.NrWheels)
         </dd>
 
+        <dt>
+            Parkeringstid timmar:
+        </dt>
+        <dd>
+            @ViewBag.totalParkHours
+        </dd>
+        <dt>
+           Parkeringstid minuter:
+        </dt>
+        <dd>
+            @ViewBag.totalParkMinutes
+        </dd>
+
+        <dt>
+            Pris
+            
+        </dt>
+        <dd>
+            @ViewBag.totalPrice
+
+        </dd>
+
     </dl>
 </div>
+<br />
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    
+    @Html.ActionLink("Back to List", "Overview")
 </p>
