@@ -30,7 +30,7 @@ namespace GarageMVC.Migrations
                   Brand = "Volvo",
                   Model = "V70",
                   NrWheels = 4,
-                  CheckInTime = new DateTime(2016, 04, 15, 12, 03, 05)
+                  CheckInTime = new DateTime(2016, 05, 15, 08, 15, 07)
               },
               new Vehicle
               {
@@ -40,7 +40,7 @@ namespace GarageMVC.Migrations
                   Brand = "BMW",
                   Model = "K1300S",
                   NrWheels = 2,
-                  CheckInTime = new DateTime(2016, 04, 15, 12, 03, 05)
+                  CheckInTime = new DateTime(2016, 05, 16, 10, 03, 05)
               },
 
               new Vehicle
@@ -51,13 +51,77 @@ namespace GarageMVC.Migrations
                   Brand = "Scania",
                   Model = "R620",
                   NrWheels = 6,
-                  CheckInTime = new DateTime(2016, 05, 12, 15, 03, 05),
+                  CheckInTime = new DateTime(2016, 05, 17, 10, 30, 05)
+              },
+
+              new Vehicle
+              {
+                  VehicleType = VehicleTypes.Car,
+                  RegNr = "GIJ 543",
+                  Color = "Red",
+                  Brand = "Porsche",
+                  Model = "718 Boxter",
+                  NrWheels = 4,
+                  CheckInTime = new DateTime(2016, 05, 17, 15, 03, 05)
+              },
+              
+              new Vehicle
+              {
+                  VehicleType = VehicleTypes.Car,
+                  RegNr = "FGH 689",
+                  Color = "Blue",
+                  Brand = "Tesla",
+                  Model = "Model X",
+                  NrWheels = 4,
+                  CheckInTime = new DateTime(2016, 05, 17, 18, 13, 45)
+              },
+
+              new Vehicle
+              {
+                  VehicleType = VehicleTypes.Car,
+                  RegNr = "BDR 472",
+                  Color = "White",
+                  Brand = "Subaru",
+                  Model = "Impreza",
+                  NrWheels = 4,
+                  CheckInTime = new DateTime(2016, 05, 18, 06, 33, 05)
+              },
+
+              new Vehicle
+              {
+                  VehicleType = VehicleTypes.Car,
+                  RegNr = "KLY 401",
+                  Color = "Black",
+                  Brand = "Ford",
+                  Model = "B-Max",
+                  NrWheels = 4,
+                  CheckInTime = new DateTime(2016, 05, 18, 07, 03, 25)
+              },
+
+              new Vehicle
+              {
+                  VehicleType = VehicleTypes.Motorcycle,
+                  RegNr = "YWE 734",
+                  Color = "Red/White",
+                  Brand = "Honda",
+                  Model = "NSR250R",
+                  NrWheels = 2,
+                  CheckInTime = new DateTime(2016, 05, 12, 07, 29, 59)
+              },
+
+              new Vehicle
+              {
+                  VehicleType = VehicleTypes.Truck,
+                  RegNr = "DPS 895",
+                  Color = "Blue",
+                  Brand = "Volvo",
+                  Model = "FL7",
+                  NrWheels = 4,
+                  CheckInTime = new DateTime(2016, 05, 12, 08, 00, 05),
               }
-
-
               
 
-         
+
             );
 
         }
