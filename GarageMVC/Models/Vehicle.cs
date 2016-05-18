@@ -14,6 +14,8 @@ namespace GarageMVC.Models
     public class Vehicle
     {
         public int Id { get; set; }
+
+        [Display(Name ="Vehicle Type")]
         public VehicleTypes VehicleType { get; set; }
 
         public DateTime CheckInTime { get; set; }

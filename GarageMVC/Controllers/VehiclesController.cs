@@ -15,7 +15,7 @@ namespace GarageMVC.Controllers
     public class VehiclesController : Controller
     {
         private VehiclesContext db = new VehiclesContext();
-        
+
         // GET: Vehicles
         public ActionResult Index()
         {
@@ -25,28 +25,28 @@ namespace GarageMVC.Controllers
         //
         public ActionResult Overview(string sortOrder)
         {
-            ViewBag.VehicleSortParm = String.IsNullOrEmpty(sortOrder) ? "VehicleType" : "";
+            ViewBag.VehicleTypeSortParm = String.IsNullOrEmpty(sortOrder) ? "VehicleType" : "";
             ViewBag.CheckInTimeSortParm = sortOrder == "CheckInTime" ? "CheckinTime" : "";
             ViewBag.RegNrSortParm = sortOrder == "RegNr" ? "RegNr" : "";
-            var vehicles= from v in db.Vehicles
+            var vehicles = from v in db.Vehicles
                            select v;
             switch (sortOrder)
             {
                 case "VehicleType":
-                    vehicles= vehicles.OrderBy(v => v.VehicleType);
+                    vehicles = vehicles.OrderBy(v => v.VehicleType);
                     break;
                 case "CheckInTime":
-                    vehicles= vehicles.OrderBy(v => v.CheckInTime);
+                    vehicles = vehicles.OrderBy(v => v.CheckInTime);
                     break;
                 case "RegNr":
-                    vehicles= vehicles.OrderBy(v => v.RegNr);
+                    vehicles = vehicles.OrderBy(v => v.RegNr);
                     break;
                 case "Color":
                     vehicles = vehicles.OrderBy(v => v.Color);
                     break;
 
                 default:
-                    vehicles= vehicles.OrderBy(v => v.VehicleType);
+                    vehicles = vehicles.OrderBy(v => v.VehicleType);
                     break;
             }
 
@@ -60,15 +60,17 @@ namespace GarageMVC.Controllers
         {
             var searchobj = db.Vehicles
                             .OrderBy(r => r.RegNr)
-                            .Where( r => r.RegNr == searchTerm );
-                 
-            
+                            .Where(r => r.RegNr.Contains(searchTerm) 
+                                || r.Color.Contains(searchTerm));
+                                 
+
+
 
 
 
 
             return View(searchobj);
-            
+
 
 
         }
@@ -163,45 +165,6 @@ namespace GarageMVC.Controllers
         }
 
 
-        public ActionResult Receipt(int? id)
-        {
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Vehicle vehicle = db.Vehicles.Find(id);
-            if (vehicle == null)
-            {
-                return HttpNotFound();
-            }
-
-            else
-            {
-
-                int price;
-                price = 60;
-                TimeSpan totalParkingTime;
-                DateTime CheckOutTime = DateTime.Now;
-                totalParkingTime = CheckOutTime.Subtract(vehicle.CheckInTime);
-                int totalParkHours = totalParkingTime.Hours;
-                int totalParkMinutes = totalParkingTime.Minutes;
-                int totalPrice = totalParkHours * price + totalParkMinutes ;
-                Debug.WriteLine(totalPrice);
-                Console.WriteLine(totalPrice);
-                ViewBag.CheckOutTime = CheckOutTime;
-                ViewBag.totalPrice = totalPrice;
-                ViewBag.totalParkHours = totalParkHours;
-                ViewBag.totalParkMinutes = totalParkMinutes;
-
-
-
-
-
-                return View(vehicle);
-            }
-        }
-
         // POST: Vehicles/Delete/5
 
         [HttpPost, ActionName("Delete")]
@@ -209,12 +172,31 @@ namespace GarageMVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
-      
-            
-            db.Vehicles.Remove(vehicle);      
-            db.SaveChanges();                  
-           
-        return RedirectToAction("Overview");
+
+
+            db.Vehicles.Remove(vehicle);
+            db.SaveChanges();
+
+
+            int price;
+            price = 60;
+            TimeSpan totalParkingTime;
+            DateTime CheckOutTime = DateTime.Now;
+            totalParkingTime = CheckOutTime.Subtract(vehicle.CheckInTime);
+            int totalParkHours = totalParkingTime.Hours;
+            int totalParkMinutes = totalParkingTime.Minutes;
+            int totalPrice = totalParkHours * price + totalParkMinutes;
+            Debug.WriteLine(totalPrice);
+            Console.WriteLine(totalPrice);
+            ViewBag.CheckOutTime = CheckOutTime;
+            ViewBag.totalPrice = totalPrice;
+            ViewBag.totalParkHours = totalParkHours;
+            ViewBag.totalParkMinutes = totalParkMinutes;
+
+
+
+
+            return View("Receipt", vehicle);
         }
 
         protected override void Dispose(bool disposing)

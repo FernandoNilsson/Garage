@@ -21,7 +21,7 @@ namespace GarageMVC.Migrations
             //  to avoid creating duplicate seed data. E.g.
             //
             context.Vehicles.AddOrUpdate(
-              p => p.VehicleType,
+              p => p.RegNr,
               new Vehicle
               {
                   VehicleType = VehicleTypes.Car,

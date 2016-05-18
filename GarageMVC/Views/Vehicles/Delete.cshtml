@@ -65,8 +65,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Receipt" action="Receipt.cshtml" class="btn btn-default" /> |
-            @Html.ActionLink("Receipt","Receipt", new { id = Model.Id }) |
+            <input type="submit" value="Check Out" action="Receipt.cshtml" class="btn btn-default" /> |  
+          @*  @Html.ActionLink("Receipt","Receipt", new { id = Model.Id }) | *@
             @Html.ActionLink("Back to List", "Overview")
         </div>
     }
