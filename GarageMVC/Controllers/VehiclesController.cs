@@ -61,7 +61,8 @@ namespace GarageMVC.Controllers
             var searchobj = db.Vehicles
                             .OrderBy(r => r.RegNr)
                             .Where(r => r.RegNr.Contains(searchTerm) 
-                                || r.Color.Contains(searchTerm)
+                                
+                            | r.Color.Contains(searchTerm)
                                 || r.Brand.Contains(searchTerm)
                                 || r.Model.Contains(searchTerm)
                                 || r.VehicleType.ToString().Contains(searchTerm));

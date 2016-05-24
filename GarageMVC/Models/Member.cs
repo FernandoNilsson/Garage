@@ -6,7 +6,8 @@ using System.Web;
 
 namespace GarageMVC.Models
 {
-    public class VehicleType
+    public class Member
+
     {
         
         public int Id { get; set; }

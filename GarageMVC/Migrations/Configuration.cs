@@ -146,7 +146,7 @@ namespace GarageMVC.Migrations
                 new VehicleType { Type = "Truck"}
 
             };
-            context.VehicleTypes.AddOrUpdate(s => s.Name, vehicleTypes);
+            context.VehicleTypes.AddOrUpdate(s => s.Type, vehicleTypes);
             context.SaveChanges();
             return vehicleTypes;
         }
