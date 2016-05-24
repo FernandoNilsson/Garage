@@ -7,16 +7,17 @@ using System.Web;
 namespace GarageMVC.Models
 {
 
-    public enum VehicleTypes {Car,Motorcycle,Truck }
-
-
-
     public class Vehicle
     {
         public int Id { get; set; }
 
         [Display(Name ="Vehicle Type")]
-        public VehicleTypes VehicleType { get; set; }
+        public virtual VehicleType VehicleType { get; set; }
+
+        [Display(Name = "Member")]
+        public virtual Member Member { get; set; }
+
+
 
         public DateTime CheckInTime { get; set; }
 
@@ -36,15 +37,8 @@ namespace GarageMVC.Models
         [Range(2,10)]
         public int NrWheels { get; set; }
 
-
-        public void Receipt(Vehicle vehicle)
-        {
-
-            Console.WriteLine("hej");
-
-
-
-        }
+        public int MemberId { get; set; }
+        public int VehicleTypeId { get; set; }
 
     }
 }

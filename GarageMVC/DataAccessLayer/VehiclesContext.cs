@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace GarageMVC.DataAccessLayer
 {
@@ -15,5 +16,13 @@ namespace GarageMVC.DataAccessLayer
         }
 
         public DbSet<Models.Vehicle> Vehicles { get; set; }
+        public DbSet<Models.Member> Members { get; set; }
+        public DbSet<Models.VehicleType> VehicleTypes { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
+
     }
 }
