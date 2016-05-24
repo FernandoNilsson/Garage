@@ -15,7 +15,7 @@ namespace GarageMVC.Models
         public virtual VehicleType VehicleType { get; set; }
 
         [Display(Name = "Member")]
-        public virtual Member Member { get; set; }
+        public virtual VehicleType Member { get; set; }
 
 
 
