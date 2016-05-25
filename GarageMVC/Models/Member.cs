@@ -14,7 +14,7 @@ namespace GarageMVC.Models
         [StringLength(40)]
         public string Name { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(12)]
         public string PersonalNr { get; set; }
 
         public virtual ICollection<Vehicle> Vehicles { get; set; }
