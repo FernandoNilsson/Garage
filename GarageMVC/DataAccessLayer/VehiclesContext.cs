@@ -19,7 +19,7 @@ namespace GarageMVC.DataAccessLayer
         }
 
         public DbSet<Models.Vehicle> Vehicles { get; set; }
-        public DbSet<Models.VehicleType> Members { get; set; }
+        public DbSet<Models.Member> Members { get; set; }
         public DbSet<Models.VehicleType> VehicleTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
