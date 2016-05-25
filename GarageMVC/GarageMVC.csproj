@@ -170,10 +170,6 @@
     <Compile Include="Migrations\201605250906368_MemberId.Designer.cs">
       <DependentUpon>201605250906368_MemberId.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605250910520_Build.cs" />
-    <Compile Include="Migrations\201605250910520_Build.Designer.cs">
-      <DependentUpon>201605250910520_Build.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -263,9 +259,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605250906368_MemberId.resx">
       <DependentUpon>201605250906368_MemberId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605250910520_Build.resx">
-      <DependentUpon>201605250910520_Build.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

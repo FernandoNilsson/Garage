@@ -27,7 +27,7 @@ namespace GarageMVC.Migrations
         private static Vehicle[] SeedVehicles(VehiclesContext context)
         {
 
-            Vehicle[] vehiclesWithIndex = context.Vehicles.Where(s => s.VehicleTypeId != null).ToArray();
+            VehicleType[] vehiclesWithIndex = context.VehicleTypes.Where(s => s.Id != null).ToArray();
 
 
             Vehicle[] vehicles = new[]
@@ -41,20 +41,19 @@ namespace GarageMVC.Migrations
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 15, 08, 15, 07),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[0].Id
 
         },
               new Vehicle
               {
                   RegNr = "YUI 567",
-                  Color = "Green",
+                  Color = "Red",
                   Brand = "BMW",
-                  Model = "K1300S",
+                  Model = "K1300s",
                   NrWheels = 2,
                   CheckInTime = new DateTime(2016, 05, 16, 10, 03, 05),
                   MemberId = null,
-                  VehicleTypeId = 0
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[1].Id
               },
 
               new Vehicle
@@ -66,7 +65,7 @@ namespace GarageMVC.Migrations
                   NrWheels = 6,
                   CheckInTime = new DateTime(2016, 05, 17, 10, 30, 05),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[2].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[2].Id
               },
 
               new Vehicle
@@ -78,7 +77,7 @@ namespace GarageMVC.Migrations
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 17, 15, 03, 05),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[0].Id
               },
 
               new Vehicle
@@ -90,7 +89,7 @@ namespace GarageMVC.Migrations
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 17, 18, 13, 45),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[0].Id
               },
 
               new Vehicle
@@ -102,7 +101,7 @@ namespace GarageMVC.Migrations
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 18, 06, 33, 05),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[0].Id
               },
 
               new Vehicle
@@ -114,7 +113,20 @@ namespace GarageMVC.Migrations
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 18, 07, 03, 25),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[0].Id
+              },
+
+              new Vehicle
+            
+              {
+                  RegNr = "MFT 893",
+                  Color = "Blue",
+                  Brand = "Volvo",
+                  Model = "FE",
+                  NrWheels = 6,
+                  CheckInTime = new DateTime(2016, 05, 18, 07, 03, 25),
+                  MemberId = null,
+                  VehicleTypeId = vehiclesWithIndex[2].Id
               },
 
               new Vehicle
@@ -126,7 +138,7 @@ namespace GarageMVC.Migrations
                   NrWheels = 2,
                   CheckInTime = new DateTime(2016, 05, 12, 07, 29, 59),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[1].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[1].Id
               },
 
               new Vehicle
@@ -138,7 +150,7 @@ namespace GarageMVC.Migrations
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 12, 08, 00, 05),
                   MemberId = null,
-                  VehicleTypeId = vehiclesWithIndex[0].VehicleTypeId
+                  VehicleTypeId = vehiclesWithIndex[0].Id
               }
 
           };
@@ -191,10 +203,10 @@ namespace GarageMVC.Migrations
                 new Member { Name = "Richard Branson", PersonalNr ="195063293518"},
                 new Member { Name = "Holger Pettersson", PersonalNr = "199304226091"},
                 new Member { Name = "Fia Nilsson", PersonalNr = "199507127061"},
-                new Member { Name = "Thomas Edison", PersonalNr ="1847063080411"},
-                new Member { Name = "Ulla Ljung", PersonalNr = "1939051925420"},
+                new Member { Name = "Thomas Edison", PersonalNr ="184706308041"},
+                new Member { Name = "Ulla Ljung", PersonalNr = "193905192540"},
                 new Member { Name = "Patsy McBrian", PersonalNr = "194712037223"},
-                new Member { Name = "Jens Eliasson", PersonalNr ="1967100385111"},
+                new Member { Name = "Jens Eliasson", PersonalNr ="196710038511"},
                 new Member { Name = "Kalle Svensson", PersonalNr = "193501259013"},
                 new Member { Name = "Anne Reasoner", PersonalNr = "195211076921"}
             };
