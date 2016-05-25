@@ -37,7 +37,7 @@ namespace GarageMVC.Models
         [Range(2,10)]
         public int NrWheels { get; set; }
 
-        public int MemberId { get; set; }
+        public int? MemberId { get; set; }
         public int VehicleTypeId { get; set; }
 
     }

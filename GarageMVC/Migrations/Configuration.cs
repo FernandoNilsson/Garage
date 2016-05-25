@@ -7,7 +7,7 @@ namespace GarageMVC.Migrations
     using System.Linq;
     using DataAccessLayer;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataAccessLayer.VehiclesContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<VehiclesContext>
     {
         public Configuration()
         {
@@ -19,6 +19,7 @@ namespace GarageMVC.Migrations
         {
             Vehicle[] vehicles = SeedVehicles(context);
             Member[] members = SeedMembers(context);
+            VehicleType[] vehicleTypes = SeedVehicleTypes(context);
 
             //member = PopulateMembers(context);
             //Another comment
@@ -37,8 +38,11 @@ namespace GarageMVC.Migrations
                   Brand = "Volvo",
                   Model = "V70",
                   NrWheels = 4,
-                  CheckInTime = new DateTime(2016, 05, 15, 08, 15, 07)
-              },
+                  CheckInTime = new DateTime(2016, 05, 15, 08, 15, 07),
+                  MemberId = null,
+                  VehicleTypeId = 0
+
+        },
               new Vehicle
               {
                   RegNr = "YUI 567",
@@ -46,7 +50,9 @@ namespace GarageMVC.Migrations
                   Brand = "BMW",
                   Model = "K1300S",
                   NrWheels = 2,
-                  CheckInTime = new DateTime(2016, 05, 16, 10, 03, 05)
+                  CheckInTime = new DateTime(2016, 05, 16, 10, 03, 05),
+                  MemberId = null,
+                  VehicleTypeId = 0
               },
 
               new Vehicle
@@ -56,7 +62,9 @@ namespace GarageMVC.Migrations
                   Brand = "Scania",
                   Model = "R620",
                   NrWheels = 6,
-                  CheckInTime = new DateTime(2016, 05, 17, 10, 30, 05)
+                  CheckInTime = new DateTime(2016, 05, 17, 10, 30, 05),
+                  MemberId = null,
+                  VehicleTypeId = 2
               },
 
               new Vehicle
@@ -66,7 +74,9 @@ namespace GarageMVC.Migrations
                   Brand = "Porsche",
                   Model = "718 Boxter",
                   NrWheels = 4,
-                  CheckInTime = new DateTime(2016, 05, 17, 15, 03, 05)
+                  CheckInTime = new DateTime(2016, 05, 17, 15, 03, 05),
+                  MemberId = null,
+                  VehicleTypeId = 0
               },
 
               new Vehicle
@@ -76,7 +86,9 @@ namespace GarageMVC.Migrations
                   Brand = "Tesla",
                   Model = "Model X",
                   NrWheels = 4,
-                  CheckInTime = new DateTime(2016, 05, 17, 18, 13, 45)
+                  CheckInTime = new DateTime(2016, 05, 17, 18, 13, 45),
+                  MemberId = null,
+                  VehicleTypeId = 0
               },
 
               new Vehicle
@@ -86,7 +98,9 @@ namespace GarageMVC.Migrations
                   Brand = "Subaru",
                   Model = "Impreza",
                   NrWheels = 4,
-                  CheckInTime = new DateTime(2016, 05, 18, 06, 33, 05)
+                  CheckInTime = new DateTime(2016, 05, 18, 06, 33, 05),
+                  MemberId = null,
+                  VehicleTypeId = 0
               },
 
               new Vehicle
@@ -96,7 +110,9 @@ namespace GarageMVC.Migrations
                   Brand = "Ford",
                   Model = "B-Max",
                   NrWheels = 4,
-                  CheckInTime = new DateTime(2016, 05, 18, 07, 03, 25)
+                  CheckInTime = new DateTime(2016, 05, 18, 07, 03, 25),
+                  MemberId = null,
+                  VehicleTypeId = 0
               },
 
               new Vehicle
@@ -106,7 +122,9 @@ namespace GarageMVC.Migrations
                   Brand = "Honda",
                   Model = "NSR250R",
                   NrWheels = 2,
-                  CheckInTime = new DateTime(2016, 05, 12, 07, 29, 59)
+                  CheckInTime = new DateTime(2016, 05, 12, 07, 29, 59),
+                  MemberId = null,
+                  VehicleTypeId = 1
               },
 
               new Vehicle
@@ -117,6 +135,8 @@ namespace GarageMVC.Migrations
                   Model = "FL7",
                   NrWheels = 4,
                   CheckInTime = new DateTime(2016, 05, 12, 08, 00, 05),
+                  MemberId = null,
+                  VehicleTypeId = 0
               }
 
           };
@@ -126,8 +146,8 @@ namespace GarageMVC.Migrations
         }
 
         private static Member[] SeedMembers(VehiclesContext context)
-        {
-            Member[] members = new[] {
+{
+    Member[] members = new[] {
                 new Member { Name = "Andrew Peters", PersonalNr = "197302124592"},
                 new Member { Name = "Brice Lambson", PersonalNr = "196007126523"},
                 new Member { Name = "Rowan Miller", PersonalNr = "195904116511"},
@@ -173,23 +193,23 @@ namespace GarageMVC.Migrations
                 new Member { Name = "Kalle Svensson", PersonalNr = "193501259013"},
                 new Member { Name = "Anne Reasoner", PersonalNr = "195211076921"}
             };
-            context.Members.AddOrUpdate(s => s.Name, members);
-            context.SaveChanges();
-            return members;
-        }
+    context.Members.AddOrUpdate(s => s.Name, members);
+    context.SaveChanges();
+    return members;
+}
 
-        private static VehicleType[] SeedVehicleTypes(VehiclesContext context)
-        {
-            VehicleType[] vehicleTypes = new[] {
+private static VehicleType[] SeedVehicleTypes(VehiclesContext context)
+{
+    VehicleType[] vehicleTypes = new[] {
                 new VehicleType { Type = "Car" },
                 new VehicleType { Type = "Motorcycle"},
                 new VehicleType { Type = "Truck"}
 
             };
-            context.VehicleTypes.AddOrUpdate(s => s.Type, vehicleTypes);
-            context.SaveChanges();
-            return vehicleTypes;
-        }
+    context.VehicleTypes.AddOrUpdate(s => s.Type, vehicleTypes);
+    context.SaveChanges();
+    return vehicleTypes;
+}
     }
 }
 

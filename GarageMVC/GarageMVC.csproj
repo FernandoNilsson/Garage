@@ -162,6 +162,18 @@
     <Compile Include="Migrations\201605241317223_newmodel2.Designer.cs">
       <DependentUpon>201605241317223_newmodel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605250751582_Garage2.5.cs" />
+    <Compile Include="Migrations\201605250751582_Garage2.5.Designer.cs">
+      <DependentUpon>201605250751582_Garage2.5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605250906368_MemberId.cs" />
+    <Compile Include="Migrations\201605250906368_MemberId.Designer.cs">
+      <DependentUpon>201605250906368_MemberId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605250910520_Build.cs" />
+    <Compile Include="Migrations\201605250910520_Build.Designer.cs">
+      <DependentUpon>201605250910520_Build.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -245,6 +257,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605241317223_newmodel2.resx">
       <DependentUpon>201605241317223_newmodel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605250751582_Garage2.5.resx">
+      <DependentUpon>201605250751582_Garage2.5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605250906368_MemberId.resx">
+      <DependentUpon>201605250906368_MemberId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605250910520_Build.resx">
+      <DependentUpon>201605250910520_Build.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
