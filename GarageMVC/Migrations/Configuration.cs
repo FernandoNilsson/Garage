@@ -21,6 +21,7 @@ namespace GarageMVC.Migrations
             Member[] members = SeedMembers(context);
 
             //member = PopulateMembers(context);
+            //Another comment
 
         }
 
